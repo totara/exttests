@@ -13,7 +13,7 @@ if (isset($_GET['extdest']) and $_GET['extdest'] == 1) {
 }
 
 // Redirect to full self URL.
-$testurl = 'http://'.$_SERVER['HTTP_HOST'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'];
+$testurl = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'];
 
 $redir = isset($_GET['redir']) ? (int)$_GET['redir'] : 5;
 if ($redir > 10) {
